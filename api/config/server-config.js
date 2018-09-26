@@ -2,11 +2,15 @@
 
 // importação de pacotes
 const express = require('express')
-    , consign = require('consign');
+    , consign = require('consign')
+    , mongoose = require('mongoose');
 
 
 // instanciamento de um servidor do express
 const app = express();
+
+// conecta a aplicação ao banco de dados "facilities-guru"
+mongoose.connect('mongodb://localhost/facilities-guru', {useNewUrlParser: true});
 
 // consign é um pacote responsável por carregar todos os arquivos definidos automaticamente
 consign()

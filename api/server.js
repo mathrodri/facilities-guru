@@ -1,6 +1,6 @@
 // arquivos main da aplicação
 
-// importando o módulo configurado da aplicação e o módulo http do node
+// importando os módulos da aplicação
 const app = require('./config/server-config')
     , http = require('http');
 
