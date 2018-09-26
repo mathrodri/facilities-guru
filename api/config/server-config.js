@@ -1,9 +1,10 @@
 // arquivo de configuração da aplicação
 
 // importação de pacotes
-const express = require('express')
-    , consign = require('consign')
-    , mongoose = require('mongoose');
+const express = require('express') // framework mvc do node
+    , bodyParser = require('body-parser') // parseador de dados na requisição
+    , consign = require('consign') // carregador de arquivos
+    , mongoose = require('mongoose'); // driver do mongodb
 
 
 // instanciamento de um servidor do express
@@ -11,6 +12,9 @@ const app = express();
 
 // conecta a aplicação ao banco de dados "facilities-guru"
 mongoose.connect('mongodb://localhost/facilities-guru', {useNewUrlParser: true});
+
+// parseia dados em formato de json vindo de formulários
+app.use(bodyParser.json());
 
 // consign é um pacote responsável por carregar todos os arquivos definidos automaticamente
 consign()

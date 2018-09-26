@@ -23,9 +23,9 @@ module.exports = (app) => {
         new: (req, res) => {
             // instancia uma nova ordem a partir do model das ordens passando os dados
             const newOrder = new app.models.OrderModel({
-                client: 'Ponto Frio',
-                storage: 'sp-facilitie-1',
-                product: 'iPhone'
+                client: req.body.client,
+                storage: req.body.storage,
+                product: req.body.product
             });
             // salva a nova ordem
             newOrder.save((err) => {
