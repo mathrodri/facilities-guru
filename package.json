@@ -1,0 +1,23 @@
+{
+  "name": "facilities-guru",
+  "version": "1.0.0",
+  "description": "Sistema da facilities guru",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathrodri/facilities-guru.git"
+  },
+  "keywords": [
+    "Facilities",
+    "Guru"
+  ],
+  "author": "Matheus Gonçalves Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathrodri/facilities-guru/issues"
+  },
+  "homepage": "https://github.com/mathrodri/facilities-guru#readme"
+}
