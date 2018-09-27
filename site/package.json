@@ -4,12 +4,14 @@
   "description": "Site do sistema facilities guru",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server"
   },
   "author": "Matheus Gonçalves Rodrigues",
   "license": "ISC",
   "dependencies": {
     "connect-mongodb-session": "^2.0.3",
+    "consign": "^0.1.6",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
