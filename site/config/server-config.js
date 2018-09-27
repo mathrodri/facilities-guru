@@ -8,7 +8,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('./app/public'));
 
 consign()
-    .include('./controllers')
+    .include('./global')
+    .then('./controllers')
     .then('./models')
     .then('./routes')
     .into(app);

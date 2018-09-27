@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server"
+    "dev": "npm-run-all --parallel app sass",
+    "app": "nodemon server",
+    "sass": "nodemon --ext sass --exec node-sass src/sass/index.sass app/public/css/app.css"
   },
   "author": "Matheus Gonçalves Rodrigues",
   "license": "ISC",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.9.3",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3"
   }
 }
