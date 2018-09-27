@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema({
     // define os campos que existiram na coleção das ordens
     client: {type: String, required: true},
-    storage: {type: String, required: true},
+    facility: {type: String, required: true},
     product: {type: String, required: true}
 }, {collection: 'orders'}); // define o nome da coleção que será utilizado
 
