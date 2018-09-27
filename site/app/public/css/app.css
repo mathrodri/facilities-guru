@@ -1,0 +1,41 @@
+@font-face {
+  font-family: roboto;
+  src: url("./fonts/Roboto-Regular.ttf"); }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-size: 62.5%;
+  font-family: roboto, sans-serif; }
+
+a {
+  text-decoration: none; }
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+
+.container {
+  width: calc(100% - 4rem);
+  max-width: 120rem;
+  margin: auto; }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+header {
+  background-color: #efefef;
+  border-bottom: 2px solid #5CACEE; }
+
+.title {
+  color: #5CACEE;
+  font-size: 3rem;
+  padding: 10px 0; }
+
+.menu-container {
+  background-color: #595959; }
