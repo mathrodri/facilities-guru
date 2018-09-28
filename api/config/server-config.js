@@ -16,6 +16,12 @@ mongoose.connect('mongodb://localhost/facilities-guru', {useNewUrlParser: true})
 // parseia dados em formato de json vindo de formulários
 app.use(bodyParser.json());
 
+// middleware que permite requisições vindas de http://localhost:4000
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4000");
+    next();
+});
+
 // consign é um pacote responsável por carregar todos os arquivos definidos automaticamente
 consign()
     .include('./controllers') // importa todos os arquivos da pasta controller
