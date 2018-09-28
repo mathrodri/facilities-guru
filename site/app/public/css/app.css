@@ -4,7 +4,8 @@
 
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
 
 html {
   font-size: 62.5%;
@@ -16,7 +17,8 @@ a {
 .content {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; }
+  align-content: stretch;
+  min-height: calc(100vh - 6.2rem); }
 
 .container {
   width: calc(100% - 4rem);
@@ -29,13 +31,34 @@ a {
   flex-wrap: wrap; }
 
 header {
+  height: 6rem;
   background-color: #efefef;
   border-bottom: 2px solid #5CACEE; }
 
+.title-box {
+  height: 100%; }
+  .title-box a {
+    display: flex;
+    align-items: center; }
+
 .title {
   color: #5CACEE;
-  font-size: 3rem;
-  padding: 10px 0; }
+  font-size: 3rem; }
 
 .menu-container {
+  width: 25rem;
   background-color: #595959; }
+
+.menu-nav {
+  width: 100%; }
+  .menu-nav ul, .menu-nav li, .menu-nav a {
+    width: 100%; }
+  .menu-nav li:nth-of-type(1n + 2) {
+    border-top: 1px solid #737373; }
+  .menu-nav a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: #fff; }
+    .menu-nav a:hover {
+      background-color: #737373; }

@@ -1,2 +1,17 @@
 .menu-container
+    width: 25rem
     background-color: $bg-color
+
+.menu-nav
+    width: 100%
+    ul, li, a
+        width: 100%
+    li:nth-of-type(1n + 2)
+        border-top: 1px solid lighten($bg-color, 10%)
+    a
+        display: block
+        padding: 1rem
+        font-size: 1.8rem
+        color: #fff
+        &:hover
+            background-color: lighten($bg-color, 10%)
