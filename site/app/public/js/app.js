@@ -14,7 +14,7 @@ function mountOrdersTable(resp) {
     const table = document.querySelector('#order-table-body');
     resp.data.forEach(function(elem) {
         const row = document.createElement('tr');
-        row.innerHTML = '<td>' + elem.client + '</td><td>' + elem.storage + '</td><td>' + elem.product + '</td>';
+        row.innerHTML = '<td>' + elem.client + '</td><td>' + elem.storage + '</td><td>' + elem.product + '</td><td><button>X</button></td>';
         table.appendChild(row);
     });
 }

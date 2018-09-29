@@ -14,6 +14,23 @@ html {
 a {
   text-decoration: none; }
 
+select:focus {
+  outline: none; }
+
+button {
+  cursor: pointer; }
+
+main {
+  width: 100%;
+  padding: 2rem; }
+
+.row {
+  width: 100%;
+  display: flex; }
+
+.row-justify {
+  justify-content: space-between; }
+
 .content {
   display: flex;
   flex-direction: row;
@@ -47,7 +64,8 @@ header {
 
 .menu-container {
   width: 25rem;
-  background-color: #595959; }
+  background-color: #595959;
+  flex-shrink: 0; }
 
 .menu-nav {
   width: 100%; }
@@ -62,3 +80,44 @@ header {
     color: #fff; }
     .menu-nav a:hover {
       background-color: #737373; }
+
+.orders-table {
+  margin-top: 2rem;
+  width: 100%;
+  border-collapse: collapse; }
+  .orders-table thead {
+    border-bottom: 1px solid #5CACEE; }
+  .orders-table th {
+    font-size: 2rem;
+    color: #5CACEE;
+    text-align: left;
+    padding: 1rem 0.5rem; }
+  .orders-table td {
+    font-size: 1.6rem;
+    color: #666;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #aaa; }
+  .orders-table tbody tr:hover {
+    background-color: #eee; }
+
+.order-select-container {
+  display: flex; }
+
+.order-select-box {
+  width: 15rem;
+  margin-right: 2rem; }
+
+.order-select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #5CACEE;
+  padding: 0.5rem 0;
+  font-size: 1.6rem;
+  color: #666; }
+
+.btn-add-order {
+  background-color: #5CACEE;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 0 1rem; }

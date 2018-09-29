@@ -1,9 +1,31 @@
 <main>
-    <table>
+    <div class="row row-justify">
+        <div class="order-select-container">
+            <div class="order-select-box">
+                <select class="order-select">
+                    <option>Todos</option>
+                    <option>Ponto Frio</option>
+                    <option>Walmart</option>
+                    <option>Americanas</option>
+                </select>
+            </div>
+            <div class="order-select-box">
+                <select class="order-select">
+                    <option>Todos</option>
+                    <option>sp-facility-1</option>
+                    <option>sp-facility-2</option>
+                    <option>rj-facility-1</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn-add-order">Adicionar ordem</button>
+    </div>
+    <table class="orders-table">
         <thead>
             <th>Cliente</th>
             <th>Armazém</th>
             <th>Produto</th>
+            <th></th>
         </thead>
         <tbody id="order-table-body"></tbody>
     </table>
