@@ -26,6 +26,9 @@ main {
   width: 100%;
   padding: 2rem; }
 
+.visible {
+  display: block !important; }
+
 .row {
   width: 100%;
   display: flex; }
@@ -57,7 +60,8 @@ main {
   width: 100%;
   height: 100%;
   background-color: #000000;
-  opacity: 0.5; }
+  opacity: 0.5;
+  display: none; }
 
 header {
   height: 6rem;
@@ -112,6 +116,10 @@ header {
   .table tbody tr:hover {
     background-color: #eee; }
 
+.label-order-select {
+  color: #5CACEE;
+  font-size: 1.8rem; }
+
 .order-select-container {
   display: flex; }
 
@@ -141,7 +149,8 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2rem; }
+  padding: 2rem;
+  display: none; }
 
 .data-form {
   display: flex;
