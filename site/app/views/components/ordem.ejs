@@ -18,9 +18,9 @@
                 </select>
             </div>
         </div>
-        <button class="btn-add-order">Adicionar ordem</button>
+        <button class="btn-open-modal">Adicionar ordem</button>
     </div>
-    <table class="orders-table">
+    <table class="table">
         <thead>
             <th>Cliente</th>
             <th>Armazém</th>
@@ -30,3 +30,32 @@
         <tbody id="order-table-body"></tbody>
     </table>
 </main>
+<div class="modal-bg"></div>
+<div class="add-order-modal">
+    <div class="row">
+        <button>X</button>
+    </div>
+    <form>
+        <div class="data-form">
+            <label>Cliente:</label>
+            <select name="client">
+                <option>Walmart</option>
+                <option>Americanas</option>
+                <option>Casas Bahia</option>
+            </select>
+        </div>
+        <div class="data-form">
+            <label>Armazém:</label>
+            <select name="storage">
+                <option>sp-facility-1</option>
+                <option>mg-facility-1</option>
+                <option>mg-facility-2</option>
+            </select>
+        </div>
+        <div class="data-form">
+            <label>Produto:</label>
+            <input type="text" name="product">
+        </div>
+        <button class="btn-add-order">Adicionar ordem</button>
+    </form>
+</div>
