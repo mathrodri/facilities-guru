@@ -24,7 +24,8 @@ app.use(function(req, res, next) {
 
 // consign é um pacote responsável por carregar todos os arquivos definidos automaticamente
 consign()
-    .include('./controllers') // importa todos os arquivos da pasta controller
+    .include('./helpers') // importa todos os arquivos da pasta helpers
+    .then('./controllers') // importa todos os arquivos da pasta controller
     .then('./models') // depois importa todos os arquivos da pasta models
     .then('./routes') // depois importa todos os arquivos da pasta routes
     .into(app); // e por final adiciona os módulos importados de todos os arquivos em um objeto 'app' instanciado como servidor

@@ -1,8 +1,7 @@
-// importa o módulo do mongoose
-const mongoose = require('mongoose');
-
 // exporta os métodos para as facilities
 module.exports = (app) => {
+    // requere o mongoose
+    const mongoose = app.helpers.mongoose;
     return {
         // define a função all
         all: (req, res) => {
