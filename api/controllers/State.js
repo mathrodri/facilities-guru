@@ -1,11 +1,10 @@
 // exporta os métodos para o state
 module.exports = (app) => {
+    // requere o model dos states
+    const state = app.models.StateModel;
     return {
         // define a função all
         all: (req, res) => {
-            // requere o model dos states
-            const state = app.models.StateModel;
-
             // procura todos os states
             state.find((err, data) => {
                 if(err) {

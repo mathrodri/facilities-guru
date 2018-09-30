@@ -1,10 +1,10 @@
 // exporta um objeto que contem as funções de requisição da rota /api/order
 module.exports = (app) => {
+    // requere o model das ordens
+    const orders = app.models.OrderModel;
     return {
         // define a função all da rota /api/order que retorna todas as ordens
         all: (req, res) => {
-            // requere o model das ordens
-            const orders = app.models.OrderModel;
             // procura todas as ordens
             orders.find()
                 .populate([{path: 'client', select: 'name'},{path: 'facility', select: 'number location', populate: {path: 'location', select: 'initials'}}]) // popula as referencias
@@ -21,7 +21,7 @@ module.exports = (app) => {
         // define a função new da rota /api/order que insere uma nova ordem
         new: (req, res) => {
             // instancia uma nova ordem a partir do model das ordens passando os dados
-            const newOrder = new app.models.OrderModel({
+            const newOrder = new orders({
                 client: req.body.client,
                 facility: req.body.facility,
                 product: req.body.product

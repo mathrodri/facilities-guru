@@ -1,10 +1,11 @@
 // exporta os métodos do client
 module.exports = (app) => {
+    // requere o model do client
+    const client = app.models.ClientModel;
     return {
         // define a função all
         all: (req, res) => {
-            // requere o model do client
-            const client = app.models.ClientModel;
+            
             // procura todos os clients
             client.find()
                 .populate({path: 'facilities', select: 'number', populate: {path: 'location', select: 'initials'}}) // popula as referencias
@@ -21,7 +22,7 @@ module.exports = (app) => {
         // define a funcao new
         new: (req, res) => {
             // instancia um novo client
-            const client = new app.models.ClientModel({
+            const client = new client({
                 name: req.body.client
             });
             // salva o novo client

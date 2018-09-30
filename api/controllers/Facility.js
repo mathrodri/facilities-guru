@@ -2,12 +2,11 @@
 module.exports = (app) => {
     // requere o mongoose
     const mongoose = app.helpers.mongoose;
+    // requere o model das facilities
+    const facility = app.models.FacilityModel;
     return {
         // define a função all
         all: (req, res) => {
-            // requere o model das facilities
-            const facility = app.models.FacilityModel;
-
             // procura todas as facilities
             facility.find()
                 .populate([{path: 'owner', select: 'name'}, {path: 'location', select: 'name initials'}]) // popula as referências
@@ -25,7 +24,7 @@ module.exports = (app) => {
         // define a função
         new: (req, res) => {
             // instância uma nova facility
-            const facility = new app.models.FacilityModel({
+            const facility = new facility({
                 owner: req.body.owner,
                 location: req.body.location
             });
