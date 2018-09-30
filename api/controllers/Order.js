@@ -6,18 +6,17 @@ module.exports = (app) => {
             // requere o model das ordens
             const orders = app.models.OrderModel;
             // procura todas as ordens
-            orders.find((err, data) => {
-                // verifica se ocorrou um erro durante a procura das ordens
-                if(err) {
-                    // imprime o erro no console
-                    console.log(err);
-                    // manda uma mensagem de erro
-                    res.json({success: false, message: 'Ouve algum problema na requisição das ordens'});
-                } else {
-                    // manda uma mensagem de sucesso com todas as ordens
-                    res.json({success: true, data: data});
-                }
-            });
+            orders.find()
+                .populate([{path: 'client', select: 'name'},{path: 'facility', select: 'number location', populate: {path: 'location', select: 'initials'}}]) // popula as referencias
+                .exec((err, data) => {
+                    if(err) {
+                        // envia um json de falha
+                        res.json({success: false, message: 'Houve algum erro ao procurar as ordens'});
+                    } else {
+                        // envia um json de sucesso com as ordens
+                        res.json({success: true, data: data});
+                    }
+                });
         },
         // define a função new da rota /api/order que insere uma nova ordem
         new: (req, res) => {
