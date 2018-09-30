@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 // cria um novo schema das ordens
 const orderSchema = new mongoose.Schema({
     // define os campos que existiram na coleção das ordens
-    client: {type: String, required: true},
-    facility: {type: String, required: true},
+    client: {type: mongoose.Schema.Types.ObjectId, ref: 'client', required: true},
+    facility: {type: mongoose.Schema.Types.ObjectId, ref: 'facility', required: true},
     product: {type: String, required: true}
-}, {collection: 'orders'}); // define o nome da coleção que será utilizado
+});
 
 // exporta o módulo do model das ordens
 module.exports = () => {
