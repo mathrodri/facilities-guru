@@ -6,10 +6,12 @@ module.exports = (app) => {
     app.post('/api/order', app.controllers.Order.new);
     // definide o método get para a rota /api/facility
     app.get('/api/facility', app.controllers.Facility.all);
+    // define o método post para a rota /api/facility
     app.post('/api/facility', app.controllers.Facility.new);
-    
+    // define o método get para a rota /api/client
     app.get('/api/client', app.controllers.Client.all);
+    // define o método post para a rota /api/client
     app.post('/api/client', app.controllers.Client.new);
-
+    // define o método get para a rota /api/state
     app.get('/api/state', app.controllers.State.all);
 };
