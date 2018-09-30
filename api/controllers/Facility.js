@@ -10,7 +10,7 @@ module.exports = (app) => {
 
             // procura todas as facilities
             facility.find()
-                .populate('owner location') // popula as referências
+                .populate([{path: 'owner', select: 'name'}, {path: 'location', select: 'name initials'}]) // popula as referências
                 .exec((err, data) => {
                     if(err) {
                         // envia um json de falha
@@ -26,9 +26,8 @@ module.exports = (app) => {
         new: (req, res) => {
             // instância uma nova facility
             const facility = new app.models.FacilityModel({
-                owner: mongoose.Types.ObjectId(req.body.owner),
-                location: req.body.location,
-                number: req.body.owner
+                owner: req.body.owner,
+                location: req.body.location
             });
 
             // salva a nova facility

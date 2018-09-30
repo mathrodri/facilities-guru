@@ -9,13 +9,13 @@ module.exports = (app) => {
     const facilitySchema = new mongoose.Schema({
         owner: {type: mongoose.Schema.Types.ObjectId, ref: 'client', required: true},
         location: {type: mongoose.Schema.Types.ObjectId, ref: 'state', required: true},
-        number: {type: String, required: true}
+        number: {type: String}
     });
 
     // define uma condição de pré salvamento para a facility
     facilitySchema.pre('save', async function (next) {
         // chama a função que define o número da facility de acordo com o cliente e o estado
-        let facilitiesCount = await getFacilityNumber(this.number, this.location);
+        let facilitiesCount = await getFacilityNumber(this.owner, this.location);
         // atribui o número da facility
         this.number = facilitiesCount;
         // da andamento no salvamento
@@ -38,11 +38,11 @@ module.exports = (app) => {
     function getFacilityNumber(id, location) {
         return new Promise((resolve, reject) => {
             // procura o cliente
-            client.findOne({_id: mongoose.Types.ObjectId(id)})
+            client.findOne({_id: id})
                 .populate('facilities')
                 .exec((err, data) => {
                     if(err) {
-                        reject();
+                        reject({success: false, message: 'Houve um erro ao achar o cliente'});
                     } else {
                         // faz uma contagem do total de facilities que o cliente possui no estado definido
                         const totalFacilitiesLocation = data.facilities.filter((elem) => {

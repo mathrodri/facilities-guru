@@ -6,15 +6,17 @@ module.exports = (app) => {
             // requere o model do client
             const client = app.models.ClientModel;
             // procura todos os clients
-            client.find((err, data) => {
-                if(err) {
-                    // envia um json de falha
-                    res.json({success: false, message: 'Houve algum erro na requisição dos clientes'});
-                } else {
-                    // envia um json de sucesso com os clients
-                    res.json({sucess: true, data: data});
-                }
-            });
+            client.find()
+                .populate({path: 'facilities', select: 'number', populate: {path: 'location', select: 'initials'}}) // popula as referencias
+                .exec((err, data) => {
+                    if(err) {
+                        // envia um json de falha
+                        res.json({success: false, message: 'Houve algum erro na requisição dos clientes'});
+                    } else {
+                        // envia um json de sucesso com os clients
+                        res.json({sucess: true, data: data});
+                    }
+                });
         },
         // define a funcao new
         new: (req, res) => {
