@@ -31,21 +31,15 @@
     <div class="row">
         <button class="btn-close-modal">X</button>
     </div>
-    <form>
+    <form name="newOrderForm" method="POST" action="http://localhost:3000/api/order">
         <div class="data-form">
             <label>Cliente:</label>
             <select name="client">
-                <option>Walmart</option>
-                <option>Americanas</option>
-                <option>Casas Bahia</option>
             </select>
         </div>
         <div class="data-form">
             <label>Armazém:</label>
             <select name="storage">
-                <option>sp-facility-1</option>
-                <option>mg-facility-1</option>
-                <option>mg-facility-2</option>
             </select>
         </div>
         <div class="data-form">
@@ -54,4 +48,5 @@
         </div>
         <button class="btn-add-order">Adicionar ordem</button>
     </form>
+    <span class="form-message"></span>
 </div>

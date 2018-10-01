@@ -30,13 +30,27 @@ module.exports = (app) => {
             newOrder.save((err) => {
                 // verifica se ocorrou algum erro durante o salvamento da nova ordem
                 if(err) {
-                    // imprime no console o erro
-                    console.log(err);
                     // manda uma mensagem de erro
                     res.json({success: false, message: 'Ouve algum problema na inserção da ordem'});
                 } else {
                     // manda uma mensagem de sucesso se conseguir salvar a nova ordem
                     res.json({success: true, message: 'Ordem salva com sucesso'});
+                }
+            });
+        },
+        // define a função delete da rota /api/order que remove uma ordem
+        remove: (req, res) => {
+            // captura o id da ordem
+            const id = req.body.id;
+            // chama a função para remover a ordem
+            orders.findByIdAndRemove(id, (err) => {
+                // verifica se houve erro ao exclui a ordem
+                if(err) {
+                    // manda uma mensagem de erro
+                    res.json({success: false, message: 'Ouve algum problema na exclusão da ordem'});
+                } else {
+                    // manda uma mensagem de sucesso se conseguir salvar a nova ordem
+                    res.json({success: true, message: 'Ordem excluida com sucesso'});
                 }
             });
         }
