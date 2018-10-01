@@ -19,8 +19,12 @@ button:focus,
 input:focus {
   outline: none; }
 
-button {
+button,
+select {
   cursor: pointer; }
+
+select:disabled {
+  cursor: not-allowed; }
 
 main {
   position: relative;
@@ -109,6 +113,18 @@ header {
     .menu-nav a:hover {
       background-color: #737373; }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .home h2 {
+    color: #5CACEE;
+    font-size: 7.6rem; }
+  .home p {
+    color: #5CACEE;
+    font-size: 2.8rem; }
+
 .table {
   margin-top: 2rem;
   width: 100%;
@@ -163,6 +179,9 @@ header {
   transform: translate(-50%, -50%);
   padding: 2rem;
   display: none; }
+  .add-order-modal .row {
+    display: flex;
+    justify-content: flex-end; }
 
 .data-form {
   display: flex;
@@ -192,3 +211,16 @@ header {
 .form-message {
   font-size: 1.6rem;
   color: green; }
+
+.btn-remove-order,
+.btn-close-modal {
+  width: 3rem;
+  height: 3rem;
+  color: #fff;
+  border: none;
+  background-color: #FF4040;
+  border-radius: 50%;
+  transition: 0.2s linear; }
+  .btn-remove-order:hover,
+  .btn-close-modal:hover {
+    background-color: #8B2323; }

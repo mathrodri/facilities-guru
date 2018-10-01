@@ -57,7 +57,7 @@ function mountOrdersTable(resp) {
         // seta or atributos da ordem
         row.setAttribute('data-client', elem.client._id);
         row.setAttribute('data-facility', elem.facility._id);
-        row.innerHTML = '<td>' + elem.client.name + '</td><td>' + (elem.facility.location.initials.toLowerCase() + '-facility-' + elem.facility.number) + '</td><td>' + elem.product + '</td><td><button class="btn-remove-order" data-order="' + elem._id + '">X</button></td>';
+        row.innerHTML = '<td>' + elem.client.name + '</td><td>' + (elem.facility.location.initials.toLowerCase() + '-facility-' + elem.facility.number) + '</td><td>' + elem.product + '</td><td><button title="Excluir" class="btn-remove-order" data-order="' + elem._id + '">X</button></td>';
         // insere a ordem na tabela
         table.appendChild(row);
     });
