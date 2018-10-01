@@ -234,6 +234,8 @@ function saveNewOrder() {
             // pede pro usuário preencher todos os campos
             span.innerHTML = 'Preencha todos os campos';
             span.style.color = 'red';
+            // seta o progresso pra false
+            localStorage.setItem('orderSendProgress', 'false');
         }
     }
     // impede o formulário ser enviado normalmente
@@ -258,11 +260,12 @@ function sendNewOrder(action, order) {
                 span.innerHTML = resp.message;
                 setTimeout(function(){
                     // tira o progresso da requisição
-                    localStorage.setItem('orderSendProgress', 'true');
+                    localStorage.setItem('orderSendProgress', 'false');
                     // atualiza as ordens
                     getOrders();
                     // fecha o modal da ordem
                     toggleModal();
+                    span.innerHTML = '';
                 }, 2000);
             }
         }
