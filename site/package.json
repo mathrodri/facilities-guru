@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
     "dev": "npm-run-all --parallel app sass js",
     "app": "nodemon server",
     "sass": "nodemon --ext sass --exec node-sass src/sass/index.sass app/public/css/app.css",
